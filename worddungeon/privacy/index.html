@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFF8E6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1F2C3A" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Privacy policy for Word Dungeon, the iOS word game: what stays on your iPhone, and what Google AdMob, RevenueCat and Apple Game Center receive.">
+<title>Word Dungeon Privacy Policy</title>
+<link rel="icon" href="data:,">
+<!--
+  Word Dungeon privacy page: template by Design (T25), Oct 2, 2026.
+  Repo: jeremylai-app/jeremylai-app.github.io, path worddungeon/privacy/index.html.
+  Fully static: inline CSS only, no JavaScript, system fonts only, no external requests of any kind.
+  Colours: Word Dungeon design/theme.js v2 (light = parchment/ink, dark = plate/parchment). Contrast: see README.md.
+  Copy: Monetization, verbatim from projects/word-dungeon/privacy-t25.md Part A (Oct 2, 2026).
+  Every block of Monetization copy is wrapped in MONETIZATION comments. Open slots are marked "SLOT" and show
+  visible [bracketed] text; all of them must be filled before the PR merges (grep for "SLOT").
+-->
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #FFF8E6;        /* palette.parchment */
+    --text: #2B1D0E;      /* palette.ink */
+    --muted: #5A4632;     /* palette.textSecondaryOnLight */
+    --link: #8E1F2A;      /* palette.bloodDeep */
+    --rule: #C6A06A;      /* palette.parchmentLip (decorative only) */
+    --box: #F0DCAE;       /* palette.parchmentShade */
+    --box-edge: #8A6A3A;  /* slot border (non-text, 3:1 checked) */
+    --focus: #1F2C3A;     /* palette.plate */
+    --accent: #B4721A;    /* palette.goldDeep (decorative bar only) */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1F2C3A;      /* palette.plate */
+      --text: #FFF8E6;    /* palette.parchment */
+      --muted: #C9D6E3;   /* palette.textSecondaryOnDark */
+      --link: #FFE07A;    /* palette.goldLight */
+      --rule: #46607A;    /* palette.plateRim (decorative only) */
+      --box: #2C3E50;     /* palette.plateRaised */
+      --box-edge: #8FA6BD;
+      --focus: #F7BA2C;   /* palette.gold */
+      --accent: #F7BA2C;  /* palette.gold (decorative bar only) */
+    }
+  }
+  @media (prefers-contrast: more) {
+    :root { --muted: var(--text); --box-edge: var(--text); }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+  .wrap { max-width: 68ch; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  @media (max-width: 400px) { .wrap { padding: 2rem 1rem 3rem; } }
+  .skip {
+    position: absolute; left: 0.5rem; top: -100em;
+    padding: 0.75rem 1rem; background: var(--text); color: var(--bg);
+    font-weight: 700; border-radius: 0.5rem; z-index: 10;
+  }
+  .skip:focus { top: 0.5rem; }
+  a { color: var(--link); text-decoration: underline; text-underline-offset: 0.15em; text-decoration-thickness: 0.08em; }
+  a:hover { text-decoration-thickness: 0.15em; }
+  a:focus-visible, .skip:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+  .site { margin: 0 0 2rem; font-size: 0.9375rem; }
+  .site a { display: inline-block; padding: 0.6rem 0; }
+  h1, h2, h3 { line-height: 1.25; margin: 0; }
+  h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.01em; }
+  h1::before { content: ""; display: block; width: 3rem; height: 0.375rem; border-radius: 0.2rem; background: var(--accent); margin-bottom: 1rem; }
+  h2 { font-size: 1.375rem; font-weight: 750; margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; }
+  p, ul { margin: 0.75rem 0 0; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 0.4rem 0; }
+  .meta { color: var(--muted); margin-top: 0.75rem; }
+  .meta p { margin: 0.15rem 0 0; }
+  nav { margin-top: 2rem; }
+  nav h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 0; padding: 0; border: 0; color: var(--muted); }
+  nav ol { margin: 0.5rem 0 0; padding-left: 1.5rem; }
+  nav li { margin: 0; }
+  nav a { display: inline-block; padding: 0.35rem 0; }
+  .slot {
+    margin: 0.75rem 0 0; padding: 0.75rem 1rem;
+    background: var(--box); border: 2px dashed var(--box-edge); border-radius: 0.75rem;
+  }
+  .slot strong { display: block; }
+  .ph { font-weight: 700; background: var(--box); border-bottom: 2px dashed var(--box-edge); padding: 0 0.2em; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9375rem; }
+  footer p { margin: 0.5rem 0 0; }
+  @media print {
+    :root { --bg: #fff; --text: #000; --muted: #333; --link: #000; --box: #fff; }
+    .skip, nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the policy</a>
+<div class="wrap">
+<header>
+  <p class="site"><a href="/">Jeremy Lai Apps: Privacy Policies</a></p>
+  <!-- MONETIZATION: title (privacy-t25.md Part A, "Title") -->
+  <h1>Word Dungeon Privacy Policy</h1>
+  <div class="meta">
+    <!-- FILLED by PM Oct 2, 2026 (set to the merge date; update if it merges later). Was: SLOT-EFFECTIVE_DATE (Monetization / PM: the date the PR merges, as <time datetime="YYYY-MM-DD">Month D, YYYY</time>) -->
+    <p>Effective: <time datetime="2026-10-02">October 2, 2026</time></p>
+    <!-- FILLED by PM Oct 2, 2026. Was: SLOT-EFFECTIVE_DATE again: "Last updated" equals the effective date on first publication; update both on every change -->
+    <p>Last updated: <time datetime="2026-10-02">October 2, 2026</time></p>
+  </div>
+</header>
+
+<nav aria-labelledby="toc-title">
+  <h2 id="toc-title">On this page</h2>
+  <ol>
+    <li><a href="#who-we-are">Who we are</a></li>
+    <li><a href="#on-device">What stays on your iPhone</a></li>
+    <li><a href="#third-parties">Third-party services</a>
+      <ol>
+        <li><a href="#ads">Ads (Google AdMob)</a></li>
+        <li><a href="#att">Tracking and your choice (App Tracking Transparency)</a></li>
+        <li><a href="#purchases">Purchases (Apple and RevenueCat)</a></li>
+        <li><a href="#game-center">Game Center (Apple, optional)</a></li>
+      </ol>
+    </li>
+    <li><a href="#dont-do">What we don't do</a></li>
+    <li><a href="#children">Children</a></li>
+    <li><a href="#choices">Your choices</a></li>
+    <li><a href="#changes">Changes</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</nav>
+
+<main id="content" tabindex="-1">
+
+<section aria-labelledby="who-we-are">
+  <h2 id="who-we-are">Who we are</h2>
+  <!-- FILLED by PM Oct 2, 2026 with Mint's answer ("Jeremy Lai"). Was: SLOT-Who we are (developer / publisher name exactly as on the App Store listing; Monetization or the PM, needs Mint, see DESIGN.md Q10) -->
+  <p>Word Dungeon is made by Jeremy Lai, an independent developer. In this policy, "we" and "us" mean Jeremy Lai.</p>
+  <!-- MONETIZATION: short version (privacy-t25.md Part A, "The short version") -->
+  <h3 id="short-version">The short version</h3>
+  <p>Word Dungeon has no accounts and no servers of our own. Your progress, stats, settings and achievements are saved only on your iPhone. We, the developer, never receive them. Three outside services are built in: Google AdMob shows optional rewarded ads, Apple and RevenueCat handle purchases, and Apple Game Center is there if you choose to sign in. This page explains what each one receives.</p>
+  <!-- /MONETIZATION -->
+</section>
+
+<section aria-labelledby="on-device">
+  <!-- MONETIZATION: on-device data text (privacy-t25.md Part A, "What stays on your iPhone") -->
+  <h2 id="on-device">What stays on your iPhone</h2>
+  <p>Your game progress, unlocked dungeons, scores, stars, Embers, Forge upgrades, achievements, settings and any run in progress are stored on your device. They are not sent to us or anyone else. Deleting the app deletes them. Daily reminders are local notifications that your iPhone schedules itself. Sharing a result card uses the iOS share sheet, and only goes where you send it.</p>
+  <!-- /MONETIZATION -->
+</section>
+
+<section aria-labelledby="third-parties">
+  <h2 id="third-parties">Third-party services</h2>
+
+  <!-- MONETIZATION: AdMob data-use text (privacy-t25.md Part A, "Ads (Google AdMob)") -->
+  <h3 id="ads">Ads (Google AdMob)</h3>
+  <p>Word Dungeon's only ads are optional rewarded videos: one to revive after a defeat and one to open a sealed upgrade card. You choose when to watch one. There are no banner, pop-up or app-open ads. Word Dungeon Pro removes the need to watch them.</p>
+  <p>To show and measure these ads, Google's ad software may collect:</p>
+  <ul>
+    <li><strong>Device identifiers:</strong> your device's advertising identifier, only if you allow tracking, plus other app- or developer-scoped identifiers.</li>
+    <li><strong>Approximate location:</strong> an estimate of your general area, worked out from your IP address. We never request your precise location.</li>
+    <li><strong>Ad and app interactions:</strong> which ads you saw and how you interacted with them (such as video views and taps), and app launches.</li>
+    <li><strong>Diagnostics:</strong> crash logs and performance data, such as launch time.</li>
+  </ul>
+  <p>Google uses this data for advertising and analytics, under <a href="https://policies.google.com/privacy" rel="noreferrer">Google's privacy policy</a> and its page on <a href="https://policies.google.com/technologies/partner-sites" rel="noreferrer">how Google uses data from apps that use its services</a>.</p>
+  <!-- /MONETIZATION -->
+
+  <!-- MONETIZATION: ATT text (privacy-t25.md Part A, the "Tracking and your choice" paragraph, shown as a heading so it can be linked) -->
+  <h3 id="att">Tracking and your choice (App Tracking Transparency)</h3>
+  <p>After your first dungeon attempt, iOS asks whether Word Dungeon may track you. If you allow it, AdMob may use your advertising identifier, together with the data above, to show ads that fit your interests, including across other companies' apps and websites. If you choose Ask App Not to Track, the advertising identifier is not shared and you get non-personalized ads. The game works the same either way. You can change this at any time in iOS <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>.</p>
+  <p><strong>If you're in the EEA, the UK or Switzerland,</strong> Google's consent form asks for your choice before any ads load. You can change it later from <strong>Privacy choices</strong> in Word Dungeon's Settings.</p>
+  <!-- /MONETIZATION -->
+
+  <!-- MONETIZATION: RevenueCat and Apple purchases text (privacy-t25.md Part A, "Purchases (Apple and RevenueCat)") -->
+  <h3 id="purchases">Purchases (Apple and RevenueCat)</h3>
+  <p>Word Dungeon Pro is sold through the App Store. Apple processes the payment, and we never see your card details, name or Apple ID. We use RevenueCat to confirm your purchase and unlock Pro. RevenueCat receives your purchase history (which plan, when, and its renewal status) with a random anonymous ID created on your device. That ID isn't tied to your name, email or any account. RevenueCat uses this data to provide the app's Pro features and for purchase analytics, under <a href="https://www.revenuecat.com/privacy" rel="noreferrer">RevenueCat's privacy policy</a>. Restore Purchases uses your Apple ID's purchase record to restore Pro on a new device.</p>
+  <p>To manage or cancel a subscription, go to iOS <strong>Settings &gt; [your name] &gt; Subscriptions</strong>.</p>
+  <!-- /MONETIZATION -->
+
+  <!-- MONETIZATION: Game Center text (privacy-t25.md Part A, "Game Center (Apple, optional)") -->
+  <h3 id="game-center">Game Center (Apple, optional)</h3>
+  <p>If you sign in to Game Center, Word Dungeon sends your leaderboard scores and achievement progress to Apple through Apple's Game Center service, so you can compare them with other players. Apple handles this data under <a href="https://www.apple.com/legal/privacy/" rel="noreferrer">Apple's privacy policy</a>. We never receive your Game Center player ID, name or friends list. If you don't sign in, the game works fully and your achievements stay on your iPhone.</p>
+  <!-- /MONETIZATION -->
+</section>
+
+<section aria-labelledby="dont-do">
+  <!-- MONETIZATION: privacy-t25.md Part A, "What we don't do" -->
+  <h2 id="dont-do">What we don't do</h2>
+  <p>We don't sell your data. We have no account system and no analytics of our own. We don't collect your name, email, contacts, photos or precise location, and we have no servers that store anything about you.</p>
+  <!-- /MONETIZATION -->
+</section>
+
+<section aria-labelledby="children">
+  <!-- MONETIZATION: children text (privacy-t25.md Part A, "Children") -->
+  <h2 id="children">Children</h2>
+  <p>Word Dungeon isn't directed at children under 13, and we don't knowingly collect personal information from them.</p>
+  <!-- /MONETIZATION -->
+</section>
+
+<section aria-labelledby="choices">
+  <h2 id="choices">Your choices</h2>
+  <!-- SLOT MONETIZATION: Your choices summary (ATT setting, Restore Purchases, deleting the app). Not in privacy-t25.md yet. Remove the interim list below once the text is in. -->
+  <div class="slot"><strong>[Monetization: your choices]</strong> [A short summary of the choices you have: the tracking setting, Restore Purchases, and deleting the app. Not written by Design. Until it's supplied, each choice is described in the sections linked below.]</div>
+  <ul>
+    <li><a href="#att">Tracking setting (App Tracking Transparency)</a></li>
+    <li><a href="#purchases">Restore Purchases and managing a subscription</a></li>
+    <li><a href="#on-device">Deleting the app</a></li>
+  </ul>
+</section>
+
+<section aria-labelledby="changes">
+  <!-- MONETIZATION: changes text (privacy-t25.md Part A, "Changes") -->
+  <h2 id="changes">Changes</h2>
+  <p>If this policy changes, we'll update this page and its effective date.</p>
+  <!-- /MONETIZATION -->
+</section>
+
+<section aria-labelledby="contact">
+  <!-- MONETIZATION: contact text (privacy-t25.md Part A, "Contact") -->
+  <h2 id="contact">Contact</h2>
+  <!-- FILLED by PM Oct 2, 2026 with Mint's answer. Was: SLOT-CONTACT_EMAIL (needs Mint; when known, use <a href="mailto:ADDRESS">ADDRESS</a>) -->
+  <p>Questions about privacy: <a href="mailto:jeremylaiytapp@gmail.com">jeremylaiytapp@gmail.com</a></p>
+  <!-- /MONETIZATION -->
+</section>
+
+</main>
+
+<footer>
+  <!-- From the site index (jeremylai-app.github.io/index.html), verbatim -->
+  <p>This site contains only static pages. It uses no cookies, analytics or tracking scripts.</p>
+  <p><a href="/">All privacy policies from Jeremy Lai Apps</a></p>
+</footer>
+</div>
+</body>
+</html>
